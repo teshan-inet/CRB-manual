@@ -1,0 +1,1936 @@
+           ** N = Numeric, right justified, leading zeros, A =     Corrected Invoice Billing Repair Data Example
+                                                                   Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                     Field Name    Column    Length    Format**    Original Record             Corrected Record
+                                                                                     with Errors
+           Location on Car                          109        2         A/N              A                           A
+           Reserved for future CRB use              111        1         A/N
+           Reserved for future CRB use              112        1          N               0                           0
+           Quantity                                 113        4          N              0003                        0003
+           Condition Code                           117        1         A/N              0                           0
+           Reserved for future CRB use              118        2          N               00                          00
+           Applied Job Code                         120        4          N              4450                        4450
+Detail     Applied Qualifier                        124        3         A/N                                    MT    MT
+           Why Made Code                            127        2         A/N              05                          05
+Repair     Reserved for future CRB use              129        2          N               00                          00
+           Removed Job Code                         131        4          N              4450                        4450
+           Removed Qualifier                        135        3         A/N                                    MT    MT
+           Responsibility Code                      138        1         A/N              1                           1
+           Defect Card/JIC Party                    139        4         A/N
+           Defect Card/JIC Date (YYMMDD)            143        6          N             000000                      000000
+           Labor Charge                             149        7          N            0002840                     0002840
+           Material Charge                          156        8          N            00000000                    00000000
+           Material Sign                            164        1          A                                     D                                                        D
+           Machine Priceable Indicator              165        1          A               Y                           Y
+           Wrong Repair Indicator                   166        1          A               N                           N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    175
+
+                    ** N = Numeric, right justified, leading zeros, A =     Corrected Invoice Billing Repair Data Example
+                                                                            Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                               Field Name            Column    Length    Format**                         Original Record                                         Corrected Record
+                                                                                                                            with Errors
+Information         Wheel Narrative (28 char), Non-Wheel (50 char)    167        28        A/N                           LABOR, FREIGHT CAR                                       LABOR, FREIGHT CAR
+                    Applied Wheel Date (MMYY)                         195        4          N
+                    Applied Wheel Manufacture Code                    199        2         A/N
+                    Applied Wheel Class Code                          201        1         A/N
+Narrative/Wheel     Applied Side Reading                              202        2          N
+                    Applied Finger Reading                            204        2          N
+                    Removed Wheel Date (MMYY)                         206        4          N
+                    Removed Wheel Manufacture Code                    210        2         A/N
+                    Removed Wheel Class Code                          212        1         A/N
+                    Removed Side Reading                              213        2         A/N
+                    Removed Finger Reading                            215        2         A/N
+                    Labor Rate                                        217        5          N                            09468                                                    09468
+                    Expanded SPLC                                     222        9          N
+                    CIF Repairing Party                               231        13        A/N
+                    CIF Billing/Invoicing Party                       244        13        A/N
+                    CIF Billed Party                                  257        13        A/N
+                    CIF Defect/JIC Party                              270        13        A/N
+                    Reserved for future CRB use                       283        6         A/N
+                    Line Number                                       289        5          N                            00001                                                    00001
+                    Railinc Inbound Date Stamp (YYMMDD)               294        6          N
+                    Railinc Outbound Date Stamp (YYMMDD)              300        6          N
+                    Resubmitted Invoice Indicator                     306        1         A/N
+                    Original Invoice Number                           307        16        A/N
+                    Original Account Date (YYMM)                      323        4          N
+                    AAR Component ID (CID)                            327        14        A/N
+                    DDCT Incident ID (XXXX99999999)                   341        12        A/N
+                    Reserved for future CRB use                       353        48        A/N
+                    Free User Area                                    401       100        A/N
+
+
+
+Car Repair Billing Procedures Manual    176
+
+                                                                            (Last Updated: 1/1/2025)
+
+Appendix V                    Resubmitting a Revised Invoice Which was
+              Returned Unpaid Per AAR Office Manual Rule 112
+How to resubmit an AAR Revised Bill via the AAR/Railinc Data Exchange system
+Listed below are guidelines for resubmitting a detailed revised AAR bill that was improperly rendered
+per Rule 112 or had errors or questionable charges exceeding amounts shown in Rule 112.
+V.1   Detail AAR Billing Repair Data Records
+Listed below are guidelines for resubmitting the original detailed revised invoice from a returned unpaid
+submitted invoice. An AAR bill improperly rendered per Rule 112 or had errors or questionable charges
+exceeding amounts shown in Rule 112 and returned unpaid back from the “Billed Party”. When
+submitting (Detail Source “BR”) AAR billing repair data records to Data Exchange, the following fields
+must be filled in as required based on the repairs performed. Original invoice repairs must be submitted
+as a standalone invoice and must not be included with a subsequent invoice in later months.
+•     Record Format (must be "1")             •     Applied Qualifier
+•     Billing Party/Invoicing Party           •     Why Made Code
+•     Billed Party                            •     Removed Job Code
+•     Account Date (YYMM)                     •     Removed Qualifier
+•     Invoice Number                          •     Responsibility Code
+•     Price Master Currency Indicator         •     Labor Charge
+•     Detail Source                           •     Material Charge
+•     Document Reference Number               •     Material Sign
+•     Car Initial                             •     Machine Priceable Indicator set to “Y” if the
+•     Car Number                                    AAR price master was used to edit/price the
+•     Kind of Car Symbol                            record, otherwise set to “N”
+•     Load/Empty Indicator                    •     Wrong Repair Indicator
+•     Repair Date (YYMMDD)                    •     Narrative & Wheel Information set to some
+•     SPLC                                          meaningful description as defined in C.3
+•     Repairing Party                         •     Labor Rate
+•     Repairing Party Invoice Number          •     Expanded SPLC
+•     Repairing Document Reference Number     •     Line Number
+•     Repair Facility Type                    •     Resubmitted Invoice Indicator = “R”
+•     Location on Car                         •     Original Invoice Number
+•     Quantity                                •     AAR Component ID (CID)
+•     Condition Code                          •     Original Account Date
+•     Applied Job Code
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    177
+
+The following fields must be filled in as indicated below:
+Billing Party/Invoicing Party must be filled in with the billing party’s initial
+Billed Party must be filled in with the billed party’s initial
+Account Date (YYMM) must be filled in with the billing party’s account date (year/month format)
+Invoice Number must be filled in with the billing party's invoice number
+Detail Source must always be set to "BR" for AAR billing repair data billing
+Repairing Party must be filled in with the repairing party’s initial
+Repairing Party Invoice Number must be filled in with the repairing party’s invoice number
+Repairing Party Document Reference Number, if present, must be filled in with the repairing party’s
+document reference number
+Resubmitted Invoice Indicator = “R”
+Below is an example of an invoice with Rule 112 errors and requirements for submitting revised records.
+V.1.1 Rule 112 Example 1—Improperly Rendered Invoice
+Railroad XXXX repairs railcar owner ZZZZ during Railroad XXXX’s account date 1001 (January 2010) and
+inadvertently invoices road YYYY under Invoice Number “123456”. Railcar owner YYYY takes exception
+to this invoice as improperly rendered and notifies Railroad XXXX. Railroad XXXX resubmits revised or
+cancels invoice and submits a new invoice (987654) to ZZZZ. invoice to ZZZZ. Because the data has
+already passed through Railinc Data Exchange one time Railroad XXXX indicates “R” in Resubmitted
+Invoice Indicator field.
+Railroad XXXX submits the incorrect original repair record to the Data Exchange system with the
+following fields filled in:
+Billing Party/Invoicing Party = “XXXX”
+Billed Party = “YYYY” (Note: this was incorrect and should have been ZZZZ)
+Account Date (YYMM) = "1401" or “1402”
+Invoice Number = "123456" (Note: It is not required to use the original invoice number.) or “987654”
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Repairing Party = “XXXX”
+Repairing Party Invoice Number = "123456"
+Repairing Party Document Reference Number = "123456" or “987654” if a new invoice was submitted
+& old one canceled.
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+Railcar owner YYYY notifies Railroad XXXX that the invoices are being returned unpaid because of
+improper Billed Party. All BRCs were for cars owned by Railcar owner ZZZZ.
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    178
+
+Railroad XXXX resubmits revised or cancels invoice and submits a new invoice “987654” to proper car
+owner ZZZZ to the Data Exchange system with the following fields to the Data Exchange system during
+Account Date 1402 with the following fields filled in and indicates “R” in Resubmitted Invoice Indicator
+field for all records in the invoice, Account Month can have the original Account Month or the Account
+Month in which the data is submitted, “1402”.
+Billing Party/Invoicing Party = “XXXX”
+Billed Party = “ZZZZ” (Note: this is the revised Billed Party)
+Account Date (YYMM) = "1402"
+Invoice Number = "123456" (Note: It is not required to use the original invoice number.)
+Detail Source = "BR"
+Document Reference Number = spaces (not filled in)
+Repairing Party = “XXXX”
+Repairing Party Invoice Number = "123456" or “987654” if a new invoice was submitted & old one
+canceled.
+Repairing Party Document Reference Number = spaces (not filled in)
+Line Number = “00001”
+Resubmitted Invoice Indicator = “R” (Note: Because the data has already passed through Railinc Data
+Exchange one time Railroad XXXX indicates “R” in Resubmitted Invoice Indicator field)
+Original Invoice Number = “123456” (Note: Original Invoice Number that was first submitted through
+Data Exchange)
+Original Account Date (YYMM) = “1001” (Note: Original Account Date that was first submitted through
+Data Exchange)
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+V.1.2 Rule 112 Example 2—Questionable Charges Invoice
+Railroad XXXX repairs railcar owner YYYY during Railroad XXXX’s account date 1401 under Invoice
+Number “123456”. Invoice total is $5000.00. Railcar owner YYYY reviews charges and notes exceptions
+on the BRC for car YYYY 012345 in the net amount of $1000.00 (Exception taken for labor charge of 13.0
+hours for Job Code 4450, Qualifier “MT”). This exception amount exceeds the threshold noted in AAR
+Office Manual Rule 112. Railcar owner YYYY notifies Railroad XXXX of the questionable charges and that
+the invoice is being returned unpaid. If Railroad XXXX agrees with exceptions from Car Owner YYYY,
+XXXX resubmits revised invoice revised or cancels invoice and submits a new invoice
+(987654) less lines of the exceptions removed from data submission), to the Data Exchange system
+during Account Date 1402 with the following fields filled in:
+Billing Party/Invoicing Party = “XXXX”
+Billed Party = “YYYY”
+Account Date (YYMM) = "1401"
+Invoice Number = "123456"
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Repairing Party = “XXXX”
+Repairing Party Invoice Number = "123456"
+Repairing Party Document Reference Number = spaces (not filled in)
+
+
+Car Repair Billing Procedures Manual    179
+
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+Railcar owner YYYY notifies Railroad XXXX that the invoices are being returned unpaid because of
+questionable charges exceeding the threshold of AAR Office Manual Rule 112.
+Railroad XXXX resubmits revised invoice or cancels invoice and submits a new invoice (987654) during
+account date 1402 to the Data Exchange system with the following fields filled in and indicates “R” in
+the Resubmitted Invoice Indicator field for all records in the invoice. Account Month can have the
+Original Account Month or the Account Month in which the data is submitted, “1402”.
+Billing Party/Invoicing Party = “XXXX”
+Billed Party = “YYYY”
+Account Date (YYMM) = “1401” or "1402"
+Invoice Number = "123456" (Note: It is not required to use the original invoice number.) or “987654”
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Car Initial = “YYYY”
+Car Number = “012345”
+Repairing Party = XXXX
+Repairing Party Invoice Number = "123456" or “987654” if a new invoice was submitted & old one
+canceled.
+Repairing Party Document Reference Number = spaces (not filled in)
+Line Number = “00001”
+Resubmitted Invoice Indicator = “R” (Note: Because the data has already passed through Railinc Data
+Exchange one time, Railroad XXXX indicates “R” in Resubmitted Invoice Indicator field)
+Original Invoice Number = “123456” (Note: Original Invoice Number that was first submitted through
+Data Exchange)
+Original Account Date (YYMM) = “1401” (Note: Original Account Date that was first submitted through
+Data Exchange)
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+V.1.3   Rule 112 Example 3—Rejected Invoice, Resubmitted with Additional Billing
+         Repair Data Added to a New Invoice in a Future Billing Month
+Railroad XXXX repairs railcar owner YYYY during Railroad XXXX’s account date 1401(January 2010) under
+Invoice Number “123456”. Invoice total is $5000.00. Railcar owner YYYY reviews charges and notes
+exceptions on the BRC for car YYYY 012345 in the net amount of $1000.00 (Exception was an excessive
+labor charge of 13.0 hours for Job Code 4450, Qualifier “MT”). The revised fields are completed as
+follows:
+Railroad XXXX submits the incorrect original repair record to the Data Exchange system with the
+following fields filled in:
+Billing Party/Invoicing Party = “XXXX”
+Billed Party = “YYYY”
+Account Date (YYMM) = "1401"
+Invoice Number = "123456"
+
+Car Repair Billing Procedures Manual                                                                180
+
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Repairing Party = “XXXX”
+Repairing Party Invoice Number = "123456"
+Repairing Party Document Reference Number = spaces (not filled in)
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+Railcar owner YYYY notifies Railroad XXXX that the invoice is being returned unpaid because of
+questionable charges exceeding the threshold of AAR Office Manual Rule 112. Railroad XXXX submits to
+Data Exchange the revised BRC(s) on a future Invoice account date 1403 under Invoice Number
+“234567” with other BRC(s) that were not previously submitted.
+If Railroad XXXX agrees with exceptions from Car Owner YYYY, XXXX resubmits revised invoice (less lines
+of exception), to the Data Exchange system with the following fields and indicates “R” in Resubmitted
+Invoice Indicator field for all records in the invoice that were previously submitted.
+Billing Party/Invoicing Party = “XXXX”
+Billed Party = “YYYY”
+Account Date (YYMM) = "1003"
+Invoice Number = "234567" (Note: It is not required to use the original invoice number.)
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Car Initial = “YYYY”
+Car Number = “012345”
+Repairing Party = XXXX
+Repairing Party Invoice Number = "234567"
+Repairing Party Document Reference Number = spaces (not filled in)
+Line Number = “00001”
+Resubmitted Invoice Indicator = “R” (Note: Because the data has already passed through Railinc Data
+Exchange one time, Railroad XXXX indicates “R” in Resubmitted Invoice Indicator field)
+Original Invoice Number = “123456” (Note: Original Invoice Number that was first submitted through
+Data Exchange)
+Original Account Date (YYMM) = “1001” (Note: Original Account Date that was first submitted through
+Data Exchange)
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    181
+
+            ** N =             Example 1—Resubmitting a Revised Invoice which was Returned Unpaid—Improperly Rendered Invoice
+                       Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+
+            Record Format           Field Name           Column  Length  Format**    Original Record    Resubmitted Record
+                                                         1       1         A/N              1                   1
+            Billing/Invoicing Party                      2       4         A/N             XXXX                XXXX
+Invoice     Billed Party                                 6       4         A/N             YYYY                ZZZZ
+            Account Date (YYMM)                          10      4       N                 1001                1002
+            Invoice Number                               14      16        A/N            123456         123456 or 987654
+            Price Master File Indicator                  30      1         A/N              U                   U
+            Detail Source                                31      2         A/N              BR                                                                            BR
+            Document Reference Number                    33      15        A/N
+            Car Initial                                  48      4          A              ZZZZ                ZZZZ
+Header      Car Number                                   52      6       N                012345              012345
+            Kind of Car Symbol                           58      1          A               T                   T
+            Load/Empty Indicator                         59      1         A/N              E                   E
+Repair      Repair Date (YYMMDD)                         60      6       N                091201              091201
+            SPLC                                         66      6       N                380000              380000
+            Repairing Party                              72      4         A/N             XXXX                XXXX
+            Repairing Party Invoice Number               76      16        A/N            123456         123456 or 987654
+            Repairing Party Document Reference Number    92      15        A/N
+            Repair Facility Type                         107     2         A/N              RT                  RT
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    182
+
+           ** N =             Example 1—Resubmitting a Revised Invoice which was Returned Unpaid—Improperly Rendered Invoice
+                      Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                    Field Name    Column  Length  Format**    Original Record    Resubmitted Record
+           Location on Car                        109     2         A/N              A                   A
+           Reserved for future CRB use            111     1         A/N
+           Reserved for future CRB use            112     1          N               0                   0
+           Quantity                               113     4          N              0130                0013
+           Condition Code                         117     1       A/N                0                   0
+           Reserved for future CRB use            118     2          N               00                  00
+           Applied Job Code                       120     4          N              4450                4450
+Detail     Applied Qualifier                      124     3         A/N    MT                            MT
+           Why Made Code                          127     2         A/N              05                  05
+Repair     Reserved for future CRB use            129     2          N               00                  00
+           Removed Job Code                       131     4          N              4450                4450
+           Removed Qualifier                      135     3         A/N    MT                            MT
+           Responsibility Code                    138     1         A/N              1                   1
+           Defect Card/JIC Party                  139     4         A/N
+           Defect Card/JIC Date (YYMMDD)          143     6          N             000000              000000
+           Labor Charge                           149     7          N            0127452             0012745
+           Material Charge                        156     8          N            00000000            00000000
+           Material Sign                          164     1          A               D                                                                                   D
+           Machine Priceable Indicator            165     1          A               Y                   Y
+           Wrong Repair Indicator                 166     1          A               N                   N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    183
+
+                    ** N =              Example 1—Resubmitting a Revised Invoice which was Returned Unpaid—Improperly Rendered Invoice
+                               Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                            Field Name                Column  Length    Format**    Original Record                                                  Resubmitted Record
+Information         Wheel Narrative (28 char), Non-Wheel (50 char)     167      28        A/N      LABOR, FREIGHT CAR                                                LABOR, FREIGHT CAR
+                    Applied Wheel Date (MMYY)                          195      4    N
+                    Applied Wheel Manufacture Code                     199      2         A/N
+                    Applied Wheel Class Code                           201      1         A/N
+Narrative/Wheel     Applied Side Reading                               202      2          N
+                    Applied Finger Reading                             204      2          N
+                    Removed Wheel Date (MMYY)                          206      4          N
+                    Removed Wheel Manufacture Code                     210      2         A/N
+                    Removed Wheel Class Code                           212      1         A/N
+                    Removed Side Reading                               213      2         A/N
+                    Removed Finger Reading                             215      2         A/N
+                    Labor Rate                                         217      5          N     09804                                                                            09804
+                    Expanded SPLC                                      222      9          N
+                    CIF Repairing Party                                231      13        A/N
+                    CIF Billing/Invoicing Party                        244      13        A/N
+                    CIF Billed Party                                   257      13        A/N
+                    CIF Defect/JIC Party                               270      13        A/N
+                    Reserved for future CRB use                        283      6         A/N
+                    Line Number                                        289      5          N     00001                                                                            00001
+                    Railinc Inbound Date Stamp (YYMMDD)                294      6          N
+                    Railinc Outbound Date Stamp (YYMMDD)               300      6          N
+                    Resubmitted Invoice Indicator                      306      1    A/N                                                                                            R
+                    Original Invoice Number                            307      16        A/N                                                                                     123456
+                    Original Account Date (YYMM)                       323      4          N                                                                                       1001
+                    AAR Component ID (CID)                             327      14        A/N
+                    DDCT Incident ID (XXXX99999999)                    341      12        A/N
+                    Reserved for future CRB use                        353      48        A/N
+                    Free User Area                                     401    100         A/N
+
+
+
+
+Car Repair Billing Procedures Manual    184
+
+            ** N =           Example 2—Resubmitting a Revised Invoice Which was Returned Unpaid—Questionable Charges Invoice
+                       Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+
+            Record Format                  Field Name    Column  Length  Format**    Original Record    Resubmitted Record
+                                                           1      1        A/N              1                   1
+            Billing/Invoicing Party                        2      4        A/N             XXXX                XXXX
+Invoice     Billed Party                                   6      4        A/N             YYYY                YYYY
+            Account Date (YYMM)                            10     4         N              1001                1002
+            Invoice Number                                 14     16       A/N            123456         123456 or 987654
+            Price Master File Indicator                    30     1        A/N              U                   U
+            Detail Source                                  31     2        A/N    BR                            BR
+            Document Reference Number                      33     15       A/N
+            Car Initial                                    48     4         A              YYYY                YYYY
+Header      Car Number                                     52     6         N             012345              012345
+            Kind of Car Symbol                             58     1         A               T                   T
+            Load/Empty Indicator                           59     1        A/N              E                   E
+Repair      Repair Date (YYMMDD)                           60     6         N             091201              091201
+            SPLC                                           66     6         N             380000              380000
+            Repairing Party                                72     4        A/N             XXXX                XXXX
+            Repairing Party Invoice Number                 76     16       A/N            123456         123456 or 987654
+            Repairing Party Document Reference Number      92     15       A/N
+            Repair Facility Type                          107     2        A/N              RT                  RT
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    185
+
+           ** N =           Example 2—Resubmitting a Revised Invoice Which was Returned Unpaid—Questionable Charges Invoice
+                      Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                     Field Name    Column  Length  Format**    Original Record    Resubmitted Record
+           Location on Car                          109     2        A/N              A                   A
+           Reserved for future CRB use              111     1        A/N
+           Reserved for future CRB use              112     1         N               0                   0
+           Quantity                                 113     4         N              0130                0013
+           Condition Code                           117     1        A/N              0                   0
+           Reserved for future CRB use              118     2         N               00                  00
+           Applied Job Code                         120     4         N              4450                4450
+Detail     Applied Qualifier                        124     3        A/N    MT                            MT
+           Why Made Code                            127     2        A/N              05                  05
+Repair     Reserved for future CRB use              129     2         N               00                  00
+           Removed Job Code                         131     4         N              4450                4450
+           Removed Qualifier                        135     3        A/N    MT                            MT
+           Responsibility Code                      138     1        A/N              1                   1
+           Defect Card/JIC Party                    139     4        A/N
+           Defect Card/JIC Date (YYMMDD)            143     6         N             000000              000000
+           Labor Charge                             149     7         N            0127452             0012745
+           Material Charge                          156     8         N            00000000            00000000
+           Material Sign                            164     1         A    D                                                                                             D
+           Machine Priceable Indicator              165     1         A               Y                   Y
+           Wrong Repair Indicator                   166     1         A               N                   N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    186
+
+                    ** N =              Example 2—Resubmitting a Revised Invoice Which was Returned Unpaid—Questionable Charges Invoice
+                               Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                                   Field Name        Column    Length    Format**    Original Record                                                 Resubmitted Record
+Information         Wheel Narrative (28 char), Non-Wheel (50 char)    167        28        A/N      LABOR, FREIGHT CAR                                               LABOR, FREIGHT CAR
+                    Applied Wheel Date (MMYY)                         195        4          N
+                    Applied Wheel Manufacture Code                    199        2         A/N
+                    Applied Wheel Class Code                          201        1         A/N
+Narrative/Wheel     Applied Side Reading                              202        2          N
+                    Applied Finger Reading                            204        2          N
+                    Removed Wheel Date (MMYY)                         206        4          N
+                    Removed Wheel Manufacture Code                    210        2         A/N
+                    Removed Wheel Class Code                          212        1         A/N
+                    Removed Side Reading                              213        2         A/N
+                    Removed Finger Reading                            215        2         A/N
+                    Labor Rate                                        217        5          N     09804                                                                           09804
+                    Expanded SPLC                                     222        9          N
+                    CIF Repairing Party                               231        13        A/N
+                    CIF Billing/Invoicing Party                       244        13        A/N
+                    CIF Billed Party                                  257        13        A/N
+                    CIF Defect/JIC Party                              270        13        A/N
+                    Reserved for future CRB use                       283        6         A/N
+                    Line Number                                       289        5          N     00001                                                                           00001
+                    Railinc Inbound Date Stamp (YYMMDD)               294        6          N
+                    Railinc Outbound Date Stamp (YYMMDD)              300        6          N
+                    Resubmitted Invoice Indicator                     306        1         A/N                                                                                      R
+                    Original Invoice Number                           307        16        A/N                                                                                    123456
+                    Original Account Date (YYMM)                      323        4          N                                                                                      1001
+                    AAR Component ID (CID)                            327        14        A/N
+                    DDCT Incident ID (XXXX99999999)                   341        12        A/N
+                    Reserved for future CRB use                       353        48        A/N
+                    Free User Area                                    401  100             A/N
+
+
+
+
+Car Repair Billing Procedures Manual    187
+
+            Example 3—Rejected Invoice, Resubmitted with Additional Billing Repair Data Added to an Invoice in a Future Billing Month
+            ** N = Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+
+            Record Format              Field Name      Column    Length    Format**    Original Record    Resubmitted Record
+                                                         1         1         A/N              1                   1
+            Billing/Invoicing Party                      2         4         A/N             XXXX                XXXX
+Invoice     Billed Party                                 6         4         A/N             YYYY                YYYY
+            Account Date (YYMM)                          10        4          N              1001                1003
+            Invoice Number                               14        16        A/N            123456              234567
+            Price Master File Indicator                  30        1         A/N              U                   U
+            Detail Source                                31        2         A/N              BR                  BR
+            Document Reference Number                    33        15        A/N
+            Car Initial                                  48        4          A              YYYY                YYYY
+Header      Car Number                                   52        6          N             012345              012345
+            Kind of Car Symbol                           58        1          A               T                   T
+            Load/Empty Indicator                         59        1         A/N              E                   E
+Repair      Repair Date (YYMMDD)                         60        6          N             091201              091201
+            SPLC                                         66        6          N             380000              380000
+            Repairing Party                              72        4         A/N             XXXX                XXXX
+            Repairing Party Invoice Number               76        16        A/N            123456              234567
+            Repairing Party Document Reference Number    92        15        A/N
+            Repair Facility Type                        107        2         A/N              RT                  RT
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    188
+
+           Example 3—Rejected Invoice, Resubmitted with Additional Billing Repair Data Added to an Invoice in a Future Billing Month
+           ** N = Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                     Field Name    Column    Length    Format**    Original Record    Resubmitted Record
+           Location on Car                          109        2         A/N              A                   A
+           Reserved for future CRB use              111        1         A/N
+           Reserved for future CRB use              112        1          N               0                   0
+           Quantity                                 113        4          N              0130                0013
+           Condition Code                           117        1         A/N              0                   0
+           Reserved for future CRB use              118        2          N               00                  00
+           Applied Job Code                         120        4          N              4450                4450
+Detail     Applied Qualifier                        124        3         A/N    MT                            MT
+           Why Made Code                            127        2         A/N              05                  05
+Repair     Reserved for future CRB use              129        2          N               00                  00
+           Removed Job Code                         131        4          N              4450                4450
+           Removed Qualifier                        135        3         A/N    MT                            MT
+           Responsibility Code                      138        1         A/N              1                   1
+           Defect Card/JIC Party                    139        4         A/N
+           Defect Card/JIC Date (YYMMDD)            143        6          N             000000              000000
+           Labor Charge                             149        7          N            0127452             0012745
+           Material Charge                          156        8          N            00000000            00000000
+           Material Sign                            164        1          A               D                   D
+           Machine Priceable Indicator              165        1          A               Y                   Y
+           Wrong Repair Indicator                   166        1          A               N                   N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    189
+
+                    Example 3—Rejected Invoice, Resubmitted with Additional Billing Repair Data Added to an Invoice in a Future Billing Month
+                    ** N = Numeric, right justified, leading zeros, A = Alphabetic, left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                                              Field Name             Column    Length    Format**    Original Record                                                          Resubmitted Record
+Information         Wheel Narrative (28 char), Non-Wheel (50 char)    167        28        A/N      LABOR, FREIGHT CAR                                                        LABOR, FREIGHT CAR
+                    Applied Wheel Date (MMYY)                         195        4          N
+                    Applied Wheel Manufacture Code                    199        2         A/N
+                    Applied Wheel Class Code                          201        1         A/N
+Narrative/Wheel     Applied Side Reading                              202        2          N
+                    Applied Finger Reading                            204        2          N
+                    Removed Wheel Date (MMYY)                         206        4          N
+                    Removed Wheel Manufacture Code                    210        2         A/N
+                    Removed Wheel Class Code                          212        1         A/N
+                    Removed Side Reading                              213        2         A/N
+                    Removed Finger Reading                            215        2         A/N
+                    Labor Rate                                        217        5          N     09804                                                                       09804
+                    Expanded SPLC                                     222        9          N
+                    CIF Repairing Party                               231        13        A/N
+                    CIF Billing/Invoicing Party                       244        13        A/N
+                    CIF Billed Party                                  257        13        A/N
+                    CIF Defect/JIC Party                              270        13        A/N
+                    Reserved for future CRB use                       283        6         A/N
+                    Line Number                                       289        5          N     00001                                                                       00001
+                    Railinc Inbound Date Stamp (YYMMDD)               294        6          N
+                    Railinc Outbound Date Stamp (YYMMDD)              300        6          N
+                    Resubmitted Invoice Indicator                     306        1         A/N                                                                                        R
+                    Original Invoice Number                           307        16        A/N                                                                                      123456
+                    Original Account Date (YYMM)                      323        4          N                                                                                        1001
+                    AAR Component ID (CID)                            327        14        A/N
+                    DDCT Incident ID (XXXX99999999)                   341        12        A/N
+                    Reserved for future CRB use                       353        48        A/N
+                    Free User Area                                    401       100        A/N
+
+
+
+
+Car Repair Billing Procedures Manual    190
+
+                                                                                    (Last Updated: 1/1/2025)
+
+Appendix W                    Joint Inspection/Defect Card Billing for
+              Retired/Dismantled Unit (Rule 102.D.9)
+How to submit joint inspection certificate (JIC) or Defect Card billing via the AAR/Railinc Data
+Exchange system when a car owner elects to retire/dismantle a damaged car instead of making
+repairs (per Office Manual Rule 102.D.9)
+When an owner receives a car home with a defect card for unfair usage damage or is in possession of a
+car that has an endorsed JIC, and the owner elects to retire/dismantle instead of repair car and/or rack,
+charges representing estimated repairs may be made for material and labor as would have been
+required for repairing or renewing items actually listed on defect card/JIC. For JIC billing in this case,
+detail source code “JD” (Joint Inspection/Defect Card Billing for Retired/Dismantled Unit) must be used
+when a car owner elects to retire/dismantle a damaged car instead of making repairs (per Office Manual
+Rule 102.D.9).
+Important Note:          Detail Source “JD” (Joint Inspection/Defect Card Billing for Retired/Dismantled Unit),
+                         is only to be used when a car owner elects to retire/dismantle a damaged car
+                         instead of making repairs (per Office Manual Rule 102.D.9).
+When submitting detail JIC original records to Data Exchange the following fields must be filled in as
+required based on the repairs performed.
+•     Record Format (must be "1")         •     Applied Job Code
+•     Billing/Invoicing Party             •     Applied Qualifier
+•     Billed Party                        •     Why Made Code
+•     Account Date (YYMM)                 •     Removed Job Code
+•     Invoice Number                      •     Removed Qualifier
+•     Price Master Currency Indicator     •     Responsibility Code
+•     Detail Source                       •     Defect Card/JIC Party
+•     Car Initial                         •     Defect Card/JIC Date
+•     Car Number                          •     Labor Charge
+•     Kind of Car Symbol                  •     Material Charge
+•     Load/Empty Indicator                •     Material Sign
+•     Repair Date (YYMMDD)                •     Machine Priceable Indicator
+•     SPLC                                •     Wrong Repair Indicator
+•     Repair Facility Type                •     Narrative & Wheel Information set to some
+•     Repairing Party                           meaningful description as defined in C.3
+•     Repairing Party Invoice Number      •     Labor Rate
+•     Location on Car                     •     Expanded SPLC
+•     Quantity                            •     Line Number
+•     Condition Code
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    191
+
+The following fields must be filled in as indicated below:
+Billing/Invoicing Party must be filled in with the repairing party’s initial
+Billed Party must be filled in with the billed party’s initial
+Account Date must be filled in with the repairing party’s account date (year/month format)
+Invoice Number must be filled in with the repairing party's invoice number
+Detail Source must always be set to "JD" for JIC Joint Inspection/Defect Card Billing (Retired/Dismantled
+ Unit)
+Document Reference Number is conditional. Only required for Detail Source “CB”. Required for CBA
+ number. It could be used to hold a file number or some information that would help the Billing or
+ Billed Party.
+Repairing Party must be set to the repairing party’s initial
+Repairing Party Invoice Number must be set to the repairing party’s invoice number
+Repairing Party Document Reference Number, if present, must be set to the repairing party’s document
+ reference number
+Example 1:  Railroad YYYY damages car XXXX123456 owned by Car Owner XXXX on November 3, 2013.
+            While in possession of XXXX123456, Car Owner XXXX performs a financial analysis and elects
+            to retire/dismantle XXXX123456 under authority of endorsed JIC dated November 15, 2013
+            from Railroad YYYY. Car Owner XXXX submits the billing record representing estimated
+            repair costs during Car Owner’s January 2014 account month to the Data Exchange system
+            and fills in the following fields:
+Billing/Invoicing Party = "XXXX"
+Billed Party = "YYYY"
+Account Date = "1401"
+Invoice Number = "12345"
+Detail Source = "JD" (Joint Inspection/Defect Card Billing - Retired/Dismantled Unit)
+Document Reference Number = spaces (not filled in)
+Repairing Party = "XXXX"
+Repairing Party Invoice Number = "12345"
+Repairing Party Document Reference Number = spaces (not filled in)
+Defect Card/JIC Party = “YYYY”
+Defect Card/JIC Date = “131115”
+The rest of the fields on the Format 1 record are filled in based on the repairs as would have been
+required.
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    192
+
+Invoice    Header  Repair
+
+
+
+
+
+
+
+
+
+
+                           Joint Inspection/Defect Card Billing for Retired/Dismantled Unit (Rule 102.D.9) Example
+Record Format              Field Name        Column    Length    Format**    Detail Record
+                                             1           1         A/N             1
+Billing/Invoicing Party                      2           4         A/N            XXXX
+Billed Party                                 6           4         A/N            YYYY
+Account Date (YYMM)                          10          4          N             1401
+Invoice Number                               14          16        A/N           12345
+Price Master File Indicator                  30          1         A/N             U
+Detail Source                                31          2         A/N             JD
+Document Reference Number                    33          15        A/N
+Car Initial                                  48          4          A             XXXX
+Car Number                                   52          6          N            123456
+Kind of Car Symbol                           58          1          A              B
+Load/Empty Indicator                         59          1         A/N             E
+Repair Date (YYMMDD)                         60          6          N            131115
+SPLC                                         66          6          N            380000
+Repairing Party                              72          4         A/N            XXXX
+Repairing Party Invoice Number               76          16        A/N           12345
+Repairing Party Document Reference Number    92          15        A/N
+Repair Facility Type                         107         2         A/N             CS
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    193
+
+                       Joint Inspection/Defect Card Billing for Retired/Dismantled Unit (Rule 102.D.9) Example (cont’d)
+                                  Field Name    Column    Length    Format**    Original Detail Record
+           Location on Car                       109        2         A/N                 R
+           Reserved for future CRB use           111        1         A/N
+           Reserved for future CRB use           112        1          N                  0
+           Quantity                              113        4          N                 0010
+           Condition Code                        117        1         A/N                 0
+           Reserved for future CRB use           118        2          N                  00
+           Applied Job Code                      120        4          N                 4450
+Detail     Applied Qualifier                     124        3         A/N                 MC
+           Why Made Code                         127        2         A/N                 05
+Repair     Reserved for future CRB use           129        2          N                  00
+           Removed Job Code                      131        4          N                 4450
+           Removed Qualifier                     135        3         A/N                 MC
+           Responsibility Code                   138        1         A/N                 3
+           Defect Card/JIC Party                 139        4         A/N                YYYY
+           Defect Card/JIC Date (YYMMDD)         143        6          N                131115
+           Labor Charge                          149        7          N               0009804
+           Material Charge                       156        8          N               00000000
+           Material Sign                         164        1          A                  D
+           Machine Priceable Indicator           165        1          A                  Y
+           Wrong Repair Indicator                166        1          A                  N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    194
+
+                                            Field    Joint Inspection Certificate (JIC) Examples (cont’d)
+                    Wheel Narrative (28            Name                  Column    Length  Format**      Original Detail Record
+Information         Applied Wheel           char), Non-Wheel (50 char)    167        28    A/N           LABOR FREIGHTCAR
+                    Applied Wheel Date (MMYY)                             195        4      N
+                    Applied             Manufacture Code                  199        2     A/N
+                    Applied Wheel Class Code                              201        1     A/N
+Narrative/Wheel     Applied Side Reading                                  202        2      N
+                              Finger Reading                              204        2      N
+                    Removed Wheel Date (MMYY)                             206        4      N
+                    Removed Wheel Manufacture Code                        210        2     A/N
+                    Removed Wheel Class Code                              212        1     A/N
+                    Removed Side Reading                                  213        2     A/N
+                    Removed Finger Reading                                215        2     A/N
+                    Labor Rate                                            217        5      N            09804
+                    Expanded SPLC                                         222        9      N
+                    CIF Repairing Party                                   231        13    A/N
+                    CIF Billing/Invoicing Party                           244        13    A/N
+                    CIF Billed Party                                      257        13    A/N
+                    CIF Defect/JIC Party                                  270        13    A/N
+                    Reserved for future CRB use                           283        6     A/N
+                    Line Number                                           289        5      N            00001
+                    Railinc Inbound Date Stamp (YYMMDD)                   294        6      N
+                    Railinc Outbound Date Stamp (YYMMDD)                  300        6      N
+                    Resubmitted Invoice Indicator                         306        1     A/N
+                    Original Invoice Number                               307        16    A/N
+                    Original Account Date (YYMM)                          323        4      N
+                    AAR Component ID (CID)                                327        14    A/N
+                    DDCT Incident ID (XXXX99999999)                       341        12    A/N
+                    Reserved for future CRB use                           353        48    A/N
+                    Free User Area                                        401       100    A/N
+
+
+
+
+
+Car Repair Billing Procedures Manual    195
+
+                                                                                 (Last Updated: 1/1/2021)
+
+Appendix X                 AAR Component ID (CID) Reporting
+How to submit AAR Component ID billing repair data via the AAR/Railinc Data Exchange
+system to be billed during the Monthly Billing Cycle.
+Note: Refer to Appendix W for reporting components under Detail Source JD.
+
+                        Component Tracking Reporting Requirement Dates Table
+            Component                             DX Informational Error         DX Mandatory Reject
+ Wheel Sets (FM 44)                      January 1ˢᵗ 2013                       October 1ˢᵗ 2013
+ Couplers, Side frames, Bolsters (FM     January 1ˢᵗ 2014                       July 1ˢᵗ 2014
+ 16, 17, 18, 47, 48)
+ Service portion, Emergency portion      January 1ˢᵗ 2016                       July 1ˢᵗ 2016
+ (FM 4)
+ Slack Adjusters (FM 8)                  October 1ˢᵗ 2016                       April 1ˢᵗ 2017
+ EOC Cushion Units (FM 59)               November 1ˢᵗ 2020                      April 1ˢᵗ 2021
+
+Important Note: Job Codes requiring a Component ID are identified in the AAR Price Matrix by
+the field “CID (Y/N):” where the indicator is shown as “Y” as noted in the example below.
+JOB 3333    NEW WHEEL SET 33 INCH,6 X 11 AXLE                                    QLFR - 00         RULE     44
+SINGLE UNIT LOCATION       1 2 3 4                                               MAX UNITS                        1
+ARTICULATED LOCATION       1  2 3 4 5 6 7 8 9 X Y Z                              MAX UNITS                        1
+DRAW BAR LOCATION          1 2 3 4 5 6 7 8 9 P Q R s T                           MAX UNITS                  1
+                           I  V TAT X    Y Z
+MATL UNIT--EACH            CID(Y/N):Y SECUREMENTPART-                            SEC. QTY                   0.000
+REMOVEDCOND  WHY MADE                    RESP CODE  MATERIAL       STD HRS                LABOR    CREDIT   PRICE
+3333   1     09                            1,3      2450.00        0.837 (V)     100.44 (V)         0.00    2550.44
+3333  1,3,4  09                          2                  0.00   0.000                   0.00     0.00    0.00
+       ,5
+3333   3     09                            1,3      2100.00        0.837 (V)     100.44(V)          0.00    2200.44
+3333   4     09                          1,3        1504.80        0.837(V)      100.44 (V)         0.00    1605.24
+3333   5    09                           1,3        1528.10        0.837 (V)     100.44(V)          0.00    1628.54
+Listed below are guidelines for submitting AAR Component ID and Billing Repair data.
+Note: Refer to AAR Field Manual Rules 4, 8, 16, 17, 18, 44, 47, 48, 59, 81, and/or Rule 72,
+Section F, for Billing Repair data requirements.
+Car Part Codes for Components:
+AC – air brake emergency portion                  FN – wheel
+AK – air brake service portion                    GQ – cushioning device – end of car
+DD – slack adjuster                               HR – coupler body
+FF – truck bolster                                QM – pressure relief valve
+FJ – truck side frame
+Note: Refer to AAR Field Manual Rule 83 for additional information.
+
+Car Repair Billing Procedures Manual                                                                        196
+
+Detail AAR Billing Repair Data Records
+When submitting (Detail Source “BR, DC, DR, JI, JR, OT, RE, SH”) AAR billing repair data records to
+Data Exchange the following fields must be filled in as required based on the repairs performed:
+ •     Record Format (must be "1")         •     Why Made Code
+ •     Billing/Invoicing Party             •     Removed Job Code
+ •     Billed Party                        •     Removed Qualifier
+ •     Account Date (YYMM)                 •     Responsibility Code
+ •     Invoice Number                      •     Labor Charge
+ •     Price Master Currency Indicator     •     Material Charge
+ •     Detail Source                       •     Material Sign
+ •     Car Initial                         •     Machine Priceable Indicator set to “Y”
+ •     Car Number                                if the AAR price master was used to
+ •     Kind of Car Symbol                        edit/price record, otherwise set to “N”
+ •     Load/Empty Indicator                •     Wrong Repair Indicator
+ •     Repair Date (YYMMDD)                •     Narrative & Wheel Information set to
+ •     SPLC                                      some meaningful description as
+ •     Repairing Party                           defined in C.3
+ •     Repairing Party Invoice Number      •     Labor Rate
+ •     Repair Facility Type                •     Expanded SPLC
+ •     Location on Car                     •     Line Number
+ •     Quantity                            •     Resubmitted Invoice Number
+ •     Condition Code                      •     Original Invoice
+ •     Applied Job Code                    •     Original Account Date
+ •     Applied Qualifier                   •     AAR Component ID (CID)
+
+
+The following fields must be filled in as indicated below:
+Billing/Invoicing Party must be filled in with the repairing party’s initial
+Billed Party must be filled in with the billed party’s initial
+Account Date must be filled in with the repairing party’s account date (year/month format)
+Invoice Number must be filled in with the repairing party's invoice number
+Detail Source must be set to one of the following " BR, DC, DR, JI, JR, OT, RE, SH " for AAR
+ billing repair data
+Document Reference Number is conditional. It is only required for Detail Source “CB” and is
+ required for CBA number. It could be used to hold a file number or some information
+ that would help the Billing or Billed Party.
+Repairing Party must be set to the repairing party’s initial
+Repairing Party Invoice Number must be set to the repairing party’s invoice number
+Repairing Party Document Reference Number, if present, must be set to the repairing
+ party’s document reference number.
+Applied Job Code must be filled with a net applied valid job code.
+AAR Component ID (CID), must be filled with the unique alpha numeric component
+ identifier for the component being applied. 14 position field.
+
+Car Repair Billing Procedures Manual                                                197
+
+Example 1: (Note: Not all applicable job codes will be listed in the examples. Not all additional
+ job code components required when reporting a wheel will be listed in the
+ examples. Refer to FM Rule 44.E.2 for details for all required fields.)
+ Railroad XXXX repairs car owner YYYY's railcar during railroad XXXX's March 2014
+ account month. Railroad XXXX applies a wheel set with a valid Applied Job Code of
+ 3336 with AAR Component ID of “ABCD1234567890”. Railroad XXXX submits the
+ repair records to the Data Exchange system and fills in the following fields:
+Billing/Invoicing Party = "XXXX"
+Billed Party = "YYYY"
+Account Date = "1403"
+Invoice Number = "12345"
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Repairing Party = "XXXX"
+Repairing Party Invoice Number = "12345"
+Repairing Party Document Reference Number = spaces (not filled in)
+Location on Car = “01”
+Applied Job Code = “3336”
+AAR Component ID (CID) = “ABCD1234567890”
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+Example 2: (Note: Not all applicable job codes will be listed in the example. Not all additional
+ job code components required when reporting a wheel will be listed in the
+ examples. Refer to FM Rule 44.E.2 for details for all required fields.)
+ Railroad XXXX repairs car owner YYYY's railcar during railroad XXXX's March 2014
+ account month. Railroad XXXX applies a wheel set with the valid Applied Job Code of
+ 6999 and the Car Part Code of “FN” with AAR Component ID “ABCD0987654321”.
+ Railroad XXXX submits the repair records to the Data Exchange system and fills in
+ the following fields:
+Billing/Invoicing Party = "XXXX"
+Billed Party = "YYYY"
+Account Date = "1403"
+Invoice Number = "12345"
+Detail Source = "BR" (Billing repair data)
+Document Reference Number = spaces (not filled in)
+Repairing Party = "XXXX"
+Repairing Party Invoice Number = "12345"
+Repairing Party Document Reference Number = spaces (not filled in)
+Location on Car = “01”
+Applied Job Code = “6999”
+Car Part Code = “FN”
+AAR Component ID (CID) = “ABCD0987654321”
+The rest of the fields on the Format 1 record are filled in based on the repairs performed.
+
+
+Car Repair Billing Procedures Manual    198
+
+            ** N = Numeric, right justified, leading zeros, A = Alphabetic, Example 1 - Billing Repair Data Example
+                                                         left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+            Field Name                                    Column     Length                                        Format**                        Wheelset Record
+            Record Format                                 1          1                                             A/N                             1
+            Billing/Invoicing Party                       2          4                                             A/N                             XXXX
+Invoice     Billed Party                                  6          4                                             A/N                             YYYY
+            Account Date (YYMM)                           10         4                                             N                               1403
+            Invoice Number                                14         16                                            A/N                             12345
+            Price Master File Indicator                   30         1                                             A/N                             U
+            Detail Source                                 31         2                                             A/N                             BR
+            Document Reference Number                     33         15                                            A/N
+            Car Initial                                   48         4                                             A                               YYYY
+Header      Car Number                                    52         6                                             N                               123456
+            Kind of Car Symbol                            58         1                                             A                               F
+            Load/Empty Indicator                          59         1                                             A/N                             E
+Repair      Repair Date (YYMMDD)                          60         6                                             N                               140215
+            SPLC                                          66         6                                             N                               380000
+            Repairing Party                               72         4                                             A/N                             XXXX
+            Repairing Party Invoice Number                76         16                                            A/N                             12345
+            Repairing Party Document Reference Number     92         15                                            A/N
+            Repair Facility Type                          107        2                                             A/N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    199
+
+           ** N = Numeric, right justified, leading zeros, A = Alphabetic, Example 1 - Billing Repair Data Example
+                                            left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+           Field Name                        Column     Length                                                    Format**            Wheelset Record
+           Location on Car                   109        2                                                         A/N                 01
+           Reserved for future CRB use       111        1                                                         A/N
+           Reserved for future CRB use       112        1                                                         N                   0
+           Quantity                          113        4                                                         N                   0001
+           Condition Code                    117        1                                                         A/N                 1
+           Reserved for future CRB use       118        2                                                         N                   00
+           Applied Job Code                  120        4                                                         N                   3336
+Detail     Applied Qualifier                 124        3                                                         A/N
+           Why Made Code                     127        2                                                         A/N                 09
+Repair     Reserved for future CRB use       129        2                                                         N                   00
+           Removed Job Code                  131        4                                                         N                   3336
+           Removed Qualifier                 135        3                                                         A/N
+           Responsibility Code               138        1                                                         A/N                 1
+           Defect Card/JIC Party             139        4                                                         A/N
+           Defect Card/JIC Date (YYMMDD)     143        6                                                         N                   000000
+           Labor Charge                      149        7                                                         N                   0009281
+           Material Charge                   156        8                                                         N                   00266879
+           Material Sign                     164        1                                                         A                   D
+           Machine Priceable Indicator       165        1                                                         A                   Y
+           Wrong Repair Indicator            166        1                                                         A                   N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    200
+
+                    ** N = Numeric, right justified, leading zeros, A = Alphabetic, Example 1 - Billing Repair Data Example
+                                                                      left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                    Field Name                                         Column     Length                                   Format**                             Wheelset Record
+                    Wheel Narrative (28 char), Non-Wheel (50 char)     167        28                                       A/N                                  NEW WHEEL SET 36 IN,
+Information         Applied Wheel Date (MMYY)                          195        4                                        N                                    1-W, 6 ½ X 12 " AXLE
+                    Applied Wheel Manufacture Code                     199        2                                        A/N
+                    Applied Wheel Class Code                           201        1                                        A/N
+Narrative/Wheel     Applied Side Reading                               202        2                                        N
+                    Applied Finger Reading                             204        2                                        N
+                    Removed Wheel Date (MMYY)                          206        4                                        N
+                    Removed Wheel Manufacture Code                     210        2                                        A/N
+                    Removed Wheel Class Code                           212        1                                        A/N
+                    Removed Side Reading                               213        2                                        A/N
+                    Removed Finger Reading                             215        2                                        A/N
+                    Labor Rate                                         217        5                                        N                                    11088
+                    Expanded SPLC                                      222        9                                        N
+                    CIF Repairing Party                                231        13                                       A/N
+                    CIF Billing/Invoicing Party                        244        13                                       A/N
+                    CIF Billed Party                                   257        13                                       A/N
+                    CIF Defect/JIC Party                               270        13                                       A/N
+                    Reserved for future CRB use                        283        6                                        A/N
+                    Line Number                                        289        5                                        N
+                    Railinc Inbound Date Stamp (YYMMDD)                294        6                                        N
+                    Railinc Outbound Date Stamp (YYMMDD)               300        6                                        N
+                    Resubmitted Invoice Indicator                      306        1                                        A/N
+                    Original Invoice Number                            307        16                                       N
+                    Original Account Date (YYMM)                       323        4                                        N                                    ABCD1234567890
+                    AAR Component ID (CID)                             327        14                                       A/N
+                    DDCT Incident ID (XXXX99999999)                    341        12                                       A/N
+                    Reserved for future CRB use                        353        48                                       A/N
+                    Free User Area                                     401        100                                      A/N
+
+
+Car Repair Billing Procedures Manual    201
+
+            ** N = Numeric, right justified, leading zeros, A = Alphabetic, Example 2 - Billing Repair Data Example
+                                                         left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+            Field Name                                    Column     Length                                        Format**                        Wheelset Record
+            Record Format                                 1          1                                             A/N                             1
+            Billing/Invoicing Party                       2          4                                             A/N                             XXXX
+Invoice     Billed Party                                  6          4                                             A/N                             YYYY
+            Account Date (YYMM)                           10         4                                             N                               1403
+            Invoice Number                                14         16                                            A/N                             12345
+            Price Master File Indicator                   30         1                                             A/N                             U
+            Detail Source                                 31         2                                             A/N                             BR
+            Document Reference Number                     33         15                                            A/N
+            Car Initial                                   48         4                                             A                               YYYY
+Header      Car Number                                    52         6                                             N                               123456
+            Kind of Car Symbol                            58         1                                             A                               F
+            Load/Empty Indicator                          59         1                                             A/N                             E
+Repair      Repair Date (YYMMDD)                          60         6                                             N                               140215
+            SPLC                                          66         6                                             N                               380000
+            Repairing Party                               72         4                                             A/N                             XXXX
+            Repairing Party Invoice Number                76         16                                            A/N                             12345
+            Repairing Party Document Reference Number     92         15                                            A/N
+            Repair Facility Type                          107        2                                             A/N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    202
+
+           ** N = Numeric, right justified, leading zeros, A = Alphabetic, Example 2 - Billing Repair Data Example
+                                                left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+           Field Name                            Column     Length                                                Format**                Wheelset Record
+           Location on Car                       109        2                                                     A/N                     01
+           Reserved for future CRB use           111        1                                                     A/N
+           Reserved for future CRB use           112        1                                                     N                       0
+           Quantity                              113        4                                                     N                       0001
+           Condition Code                        117        1                                                     A/N                     1
+           Reserved for future CRB use           118        2                                                     N                       00
+           Applied Job Code                      120        4                                                     N                       6999
+Detail     Applied Qualifier / Car Part Code     124        3                                                     A/N                     FN
+           Why Made Code                         127        2                                                     A/N                     09
+Repair     Reserved for future CRB use           129        2                                                     N                       00
+           Removed Job Code                      131        4                                                     N                       6999
+           Removed Qualifier / Car Part Code     135        3                                                     A/N                     FN
+           Responsibility Code                   138        1                                                     A/N                     1
+           Defect Card/JIC Party                 139        4                                                     A/N
+           Defect Card/JIC Date (YYMMDD)         143        6                                                     N                       000000
+           Labor Charge                          149        7                                                     N                       0000000
+           Material Charge                       156        8                                                     N                       00260000
+           Material Sign                         164        1                                                     A                       D
+           Machine Priceable Indicator           165        1                                                     A                       N
+           Wrong Repair Indicator                166        1                                                     A                       N
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    203
+
+                    ** N = Numeric, right justified, leading zeros, A = Alphabetic, Example 2 - Billing Repair Data Example
+                                                                      left justified, padded with spaces, A/N = Alphanumeric, left justified, padded with spaces
+                    Field Name                                         Column     Length                                   Format**                             Wheelset Record
+
+Information         Wheel Narrative (28 char), Non-Wheel (50 char)     167        28                                       A/N
+                    Applied Wheel Date (MMYY)                          195        4                                        N
+                    Applied Wheel Manufacture Code                     199        2                                        A/N
+                    Applied Wheel Class Code                           201        1                                        A/N
+Narrative/Wheel     Applied Side Reading                               202        2                                        N
+                    Applied Finger Reading                             204        2                                        N
+                    Removed Wheel Date (MMYY)                          206        4                                        N
+                    Removed Wheel Manufacture Code                     210        2                                        A/N
+                    Removed Wheel Class Code                           212        1                                        A/N
+                    Removed Side Reading                               213        2                                        A/N
+                    Removed Finger Reading                             215        2                                        A/N
+                    Labor Rate                                         217        5                                        N                                    11088
+                    Expanded SPLC                                      222        9                                        N
+                    CIF Repairing Party                                231        13                                       A/N
+                    CIF Billing/Invoicing Party                        244        13                                       A/N
+                    CIF Billed Party                                   257        13                                       A/N
+                    CIF Defect/JIC Party                               270        13                                       A/N
+                    Reserved for future CRB use                        283        6                                        A/N
+                    Line Number                                        289        5                                        N
+                    Railinc Inbound Date Stamp (YYMMDD)                294        6                                        N
+                    Railinc Outbound Date Stamp (YYMMDD)               300        6                                        N
+                    Resubmitted Invoice Indicator                      306        1                                        A/N
+                    Original Invoice Number                            307        16                                       N
+                    Original Account Date (YYMM)                       323        4                                        N                                    ABCD0987654321
+                    AAR Component ID (CID)                             327        14                                       A/N
+                    DDCT Incident ID (XXXX99999999)                    341        12                                       A/N
+                    Reserved for future CRB use                        353        48                                       A/N
+                    Free User Area                                     401        100                                      A/N
+
+
+
+Car Repair Billing Procedures Manual    204
+
+                                                                                 (Last Updated: 1/1/2026)
+Appendix Y  Exceptions and Counter Billing Authority per
+        AAR Office Manual Rule 112.D, 112.H and 120.B
+IMPORTANT: Effective January 1, 2026, use of the CRB Electronic Exceptions System is mandatory for
+submitting billing exceptions, issuing responses, and CBAs (Counter Billing Authority).
+When a billed party receives an invoice where the Record Type 1 tax record is submitted in accordance
+with Appendix N, including car initial and number, tax-related exceptions must be submitted at the
+individual car level using the CRB Electronic Exceptions System as defined below.
+When a billed party receives an invoice where the railcar initial and number are missing from Tax Billing
+Record Type 1 (Detail Sources PT, QT, GT, HT and IV) and/or aggregate tax billing is submitted as a
+Record Type 8 (Detail Source ZZ), the billed party may submit an exception via email to the billing party
+referencing AAR Circular Letter C-14679. After which, a Circular Letter CBA may be issued by the billing
+party.
+Exceptions are a disagreement with a BRC (Billing Repair Card, as defined in Rule 83 exhibit “A”) line
+item, or to an entire BRC, that is brought to the attention of the Billing Party by the Billed Party. Billing
+exceptions may include, but are not limited to, such issues as incorrect car initials/numbers, incorrect
+repair dates, incorrect pricing, AAR rule violations, invalid repairs based on car type or car configuration,
+repairs related to EHMS alerts where no alert is found in the EHMS data, excessive quantities, excessive
+hours, or excessive material charges.
+Y.1     How to Submit Exceptions to a Billing Party for Charges
+        Received for AAR Car Repair Billing
+This section lists guidelines for submitting exceptions to a Billing Party.
+There are several types of exceptions to AAR Car Repair Bills:
+ 1.     Unpaid Invoices – follow AAR OM Rule 112.H
+ 2.     Paid Invoices – follow AAR OM Rule 112.H.4
+Exceptions and exception communications are handled using the CRB Electronic Exceptions System and
+are processed in real time. Electronic billing exceptions will be submitted through the CRB Electronic
+Exceptions System, and once validated, electronically forwarded to the appropriate billing party.
+Electronic exceptions are herein referred to as “Exception Letters”. Billing parties will use this same
+system to respond to exception letters and either agree, partially agree, or disagree with each
+exception. Billing parties will also use this system to issue CBAs (Counter Billing Authority) to a billed
+party when in agreement or partial agreement on a paid invoice as defined in Y.2.
+Exception letters shall be submitted at the invoice level and submitted either through an FTP (File
+Transfer Protocol) mailbox or through an upload function using the CRB Electronic Exceptions Upload on
+the CRB Dashboard. In either case, every inbound file will be validated before accepted in accordance
+with Y.1.2. Validated messages will be stored and forwarded to the appropriate receiver. Invalid
+messages will not be saved and will be rejected. In both cases, the CRB participant(s) listed to receive
+exception submission notifications for the submitting party will be notified via email of the message
+validation status. Participant notifications are managed in CRB under the Data Exchange tab and are the
+responsibility of the participant CRB Content Admin to maintain.
+
+Car Repair Billing Procedures Manual                                                                       205
+
+All exception letters submitted shall be formatted in accordance with Y.1.4. Exception letters submitted
+through an FTP mailbox shall be in in a 500-byte format. Both .txt and .dat files are accepted. Electronic
+exceptions submitted through the CRB exceptions upload function on the dashboard shall be in .xlsx
+format. In both cases, the exception message shall be in a .zip file with all applicable attachments. All
+exception letter submissions and responses shall use the file naming convention as per Y.1.3.
+Each Record Format 2 message allows for 1 attachment per record. There is no limit to the number of
+attachments in the .zip file, however no single attachment can exceed 10 MB. The attachment field is
+optional and can be used for supporting documentation. Only PDF documents are accepted in the
+electronic exceptions system. Applicable attachments should be included in the .zip file and the file
+name of the attachment should be listed in the Record Format 2 message. The exception file will be
+rejected if any attachments in the .zip file are not correctly listed in the exception message, or an
+attachment is listed in the message but is not included in the .zip file. File names in the exception
+message and .zip file must match for validation.
+Unpaid Invoices (Invoice Rejection)
+Per AAR Office Manual Rule 112.H.3.a, “The unpaid invoice must be returned to the Billing Party no later
+than 60 days from availability of the data (as defined in Rule 112.H.2).” Exception letters submitted for
+an unpaid invoice (Invoice Rejection) may be submitted as a header level invoice rejection (no identified
+exceptions). This is where the entire unpaid invoice is rejected at the header level and no exceptions are
+identified. When a header level invoice rejection is submitted, the billed party must document in the
+description section of the message why the invoice is being rejected. The billing party is limited to only
+one response on header level invoice rejections to indicate agreement or disagreement.
+In lieu of a header level invoice rejection, exception letters may be submitted for an unpaid invoice
+(Invoice Rejection) as a non-header level invoice rejection. A non-header level unpaid invoice rejection
+must contain all exceptions leading to the invoice rejection for billing party review. Identifying
+exceptions at the invoice rejection level does not prevent a billed party from identifying additional
+exceptions or taking exceptions once an invoice is paid. In addition, identifying exceptions on an invoice
+rejection does not circumvent AAR Office Manual Rule 112.H.4.a.
+Paid Invoices
+Exception letters submitted for a paid invoice, in accordance with AAR Office Manual Rule 112.H, can be
+at the BRC Header level and Repair Line level. This exception letter is submitted for billing party
+consideration of reducing the dollar amount charged. If the exception letter response from the Billing
+Party (to whom the exception was taken) is not agreed to, a second letter of exception may be
+submitted debating the issue of charges on outstanding exceptions. Subsequent letters of exception for
+the same invoice may not contain any new exceptions that were not identified in the first exception
+letter submitted for the paid invoice. The exception letter count is limited to a maximum of 99 exception
+letters and 99 responses.
+Here is an example of multiple exception letters and responses on the same invoice as defined in Y.1.3:
+Note: Initial exception letter must always be 01. Each exception letter after on the same invoice must be
+previous exception letter +1.
+ •  ABCD_WXYZ_123456_2409_01 (Initial exception letter from billed party to billing party)
+
+ •  WXYZ_ABCD_123456_2409_01 (Response from billing party to billed party)
+
+Car Repair Billing Procedures Manual                                                                  206
+
+•     ABCD_WXYZ_123456_2409_02 (Second exception letter from billed party to billing party)
+
+•     WXYZ_ABCD_123456_2409_02 (Response to second letter from billing party to billed party)
+
+•     ABCD_WXYZ_123456_2409_03 (Third exception letter from billed party to billing party)
+
+•     WXYZ_ABCD_123456_2409_03 (Response to third letter from billing party to billed party)
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    207
+
+Y.1.1  Examples of Exceptions that are Not Valid
+This section contains examples of submitted exceptions that are not acceptable:
+ •     Exceptions being taken to Wheelsets, Draft Gears, and Brake Beams to verify new material.
+       Taking exception using the full price charged. When asked to verify, the amount should be $0 or
+       the difference between new and reconditioned.
+ •     Air hose not out of date (when it is either A/B end issue, or date last air hose was installed
+       combined with age of hose at time of installation meets replacement standards). No verification
+       sent with exception.
+ •     Repair is out of date (when previously rejected multiple times).
+ •     Brake shoe not standard to car (when it is acceptable per AAR rules – also Carmen replace shoes
+       in kind).
+ •     Material price greater than AAR Price Master (when it is not).
+ •     Car does not exist in Umler (when it does or alternately was in Umler at the time of repair).
+ •     Not all exceptions filed at the same time.
+ •     ABT not out of date-documentation provided (data provided is not supported by Railinc).
+ •     Wheel not High Impact at the time of repair-provides graph but no documentation from Railinc.
+ •     “Removed Wheel data does not match previous application” – Not rule based, and no
+       verification provided of what car owner believed was on the car. Billing Party only knows what
+       they applied not what others have billed car owner.
+ •     Car Kind Symbol when it is not applicable to repair made.
+ •     Air brake hose support complete repair not required to maintain height for a Section A defect
+       repair made in accordance with Rule 5.B. Correct Repair Chart to obtain proper height
+       requirement.
+ •     Requests for supplemental supporting documentation not required in Rule 36 Section E for
+       removal of overheated roller bearing (WM 50) and roller bearing temperature performance
+       (WM51) or (WM52).
+ •     The handling line can setout car, at its discretion, to perform and bill a car for a Rule 91 Service
+       Interruption line of road repair to safely accomplish repair instead of slowing train speed and
+       moving car to terminal without setout.
+ •     Load/Empty when it is not applicable to repair made.
+ •     Exceptions to Air Brake tests cannot be taken based on the Qualifier reported.
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    208
+
+Y.1.2   Exception Correspondence
+This section contains rules for required fields and validations based on exception letter type. Validations
+are conducted on fields where a mandatory value is required or when data is present in an optional
+field. Validations are divided into Message Format (EX2), Invoice (EXI), and Attachment (EXA)
+validations.
+Required Fields for Unpaid Invoice Rejection (RJ)
+                                   Required Fields for Unpaid Invoice Rejection
+                                         M=Mandatory, B=Blank, O=Optional
+Billed Party Exception             Invoice Rejection     Invoice Rejection     Invoice Rejection
+Submissions                        Header Level          BRC Exception         Repair Line
+                                                                               Exception
+Record Format                      M (Always 2)          M (Always 2)          M (Always 2)
+Billing Party                      M                     M                     M
+Billed Party                       M                     M                     M
+Account Date                       M                     M                     M
+Total Invoice Amount               M                     M                     M
+Invoice Number                     M                     M                     M
+DX Outbound Date                   B (Produced by        B (Produced by        B (Produced by
+                                   Railinc)              Railinc)              Railinc)
+Car Initial                        B                     M                     M
+Car Number                         B                     M                     M
+Repair Date                        B                     M                     M
+SPLC                               B                     M                     M
+Repairing Party                    M                     M                     M
+Invoice Header Level Exception     M (Must be Y)         M (Must be N)         M (Must be N)
+BRC Header Level Exception         M (Must be N)         M (Must be Y)         M (Must be N)
+Line Number                        M (Must be 0)         M (Must be 0)         M
+Currency Indicator                 M                     M                     M
+Submission Date                    B (Produced by        B (Produced by        B (Produced by
+                                   Railinc)              Railinc)              Railinc)
+Detail Source                      M (Must be RJ)        M (Must be RJ)        M (Must be RJ)
+Exception Letter Counter           M (Must be 01)        M                     M
+Exception Description              M                     M                     M
+Amount                             M (Must match         M (BRC Amount)        M (Repair line
+                                   invoice total)                              amount)
+Amount Indicator                   B                     B                     B
+Response Indicator                 B                     B                     B
+Attachment                         O                     O                     O
+
+
+
+
+Car Repair Billing Procedures Manual    209
+
+Required Fields for Paid Invoice Rejection (EE)
+                                   Required Fields for Paid Invoice Exceptions
+                                         M=Mandatory, B=Blank, O=Optional
+Billed Party Exception             BRC Header Level Exception     Repair Line Exception
+Submissions
+Record Format                      M (Always 2)                   M (Always 2)
+Billing Party                      M                              M
+Billed Party                       M                              M
+Account Date                       M                              M
+Total Invoice Amount               M                              M
+Invoice Number                     M                              M
+DX Outbound Date                   B (Produced by Railinc)        B (Produced by Railinc)
+Car Initial                        M                              M
+Car Number                         M                              M
+Repair Date                        M                              M
+SPLC                               M                              M
+Repairing Party                    M                              M
+Invoice Header Level Exception     M (Must be N)                  M (Must be N)
+BRC Header Level Exception         M (Must be Y)                  M (Must be N)
+Line Number                        M (Must be 0)                  M
+Currency Indicator                 M                              M
+Submission Date                    B (Produced by Railinc)        B (Produced by Railinc)
+Detail Source                      M (Must be EE)                 M (Must be EE)
+Exception Letter Counter           M                              M
+Exception Description              M                              M
+Amount                             M (BRC Exception Amount)       M (Exception amount for the
+                                                                  Repair line)
+Amount Indicator                   M                              M
+Response Indicator                 B                              B
+Attachment                         O                              O
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    210
+
+Message Validations (EX2) – Validations of the message data
+Message Field                Error Code     Description
+Record Format                EX2001         Invalid Record Format. Exception messages must be a Format 2.
+Billing Party                EX2002         Billing/Invoicing Party Initial - Must be present and alphanumeric
+Billed Party                 EX2003         Billing/Invoicing Party Initial - Must be present and alphanumeric.
+Account Date                 EX2004         Must be present and valid numeric date format (YYMM).
+Total Invoice Amount         EX2005         Must be present and numeric. Cannot exceed 16 characters.
+Invoice Number               EX2006         Must be present and alphanumeric.
+Car Initial                  EX2007         Car initial Must be present and alphabetic.
+Car Initial                  EX2008         Car initial must not exceed 4 characters .
+Car Initial                  EX2009         Car initial must be blank for this type of exception.
+Car Number                   EX2010         Car number must be numeric and greater than zero.
+Car Number                   EX2011         Car number cannot exceed six numeric characters.
+Car Number                   EX2012         Car number must be blank for this type of exception.
+Repair Date                  EX2013         Repair date must be in YYMMDD format.
+Repair Date                  EX2014         Repair date cannot be greater than the account date.
+Repair Date                  EX2015         Repair date must be blank for this type of exception.
+SPLC                         EX2016         SPLC Must be 9 numeric numbers including trailing zeros and
+SPLC                         EX2017         greater than 0.
+                                            SPLC must be blank for this type of exception.
+Repairing Party              EX2018         Repairing Party must be present and alphanumeric.
+Invoice Header Level         EX2019         Invoice Header Level Exception value must be Y or N.
+Exception
+BRC Header Level             EX2020         BRC Header Level Exception value must be Y or N.
+Exception
+BRC Header Level             EX2021         BRC header level must be N when Invoice Header Level is Y.
+Exception
+Line Number                  EX2022         Line Number - Must be numeric and greater than zero.
+Currency Indicator           EX2023         Must be 'U' (US) or 'C' (Canada).
+Detail Source                EX2024         Detail Source - Must be one of the following: EE, RS, RJ, EZ.
+Exception Letter Counter     EX2025         Exception letter number must be a 2-digit numeric number.
+Exception Letter Counter     EX2026         Exception letter number must be one greater than the previous
+Amount                       EX2027         exception for the same invoice.
+                                            Amount must be a 16-digit numeric number, including any
+                                            leading zeros.
+Amount Indicator             EX2028         Amount indicator - Must be one of the following: D (Debit), C
+Response Indicator           EX2029         (Credit)
+                                            Response indicator must be A, D, P or blank if initial exception.
+Line Number                  EX2030         Line Number - Must be numeric and equal to zero.
+Amount                       EX2031         Exception Amount must be equal to Total Invoice amount.
+Amount Indicator             EX2032         Amount indicator - must be blank.
+Amount                       EX2033         Amount must be a 16-digit numeric number equal to Zero,
+Exception Description        EX2034         including any leading zeros.
+                                            Exception Description cannot be blank.
+
+
+Car Repair Billing Procedures Manual    211
+
+Invoice Validations (EXI) – Validation between exception letter and the invoice
+Message Field       Error      Description
+Billing Party       Code
+                    EXI001     Unable to validate in original invoice.
+Billed Party        EXI002     Unable to validate in original invoice.
+Submission Date     EXI003     The first exception letter (EE) on the invoice must not be older
+                               than seven months from the DX Outbound Date and 10 months
+                               from the DX outbound date if leased equipment and must not be
+Invoice Number      EXI004     in the future.
+                               Invoice number and Account date do not match DX invoice.
+Car Initial         EXI005     Car initial does not match invoice.
+Car Number          EXI006     Car number does not match invoice.
+Repairing Party     EXI007     Unable to validate in original invoice.
+Line Number         EXI008     Unable to locate repair line in the invoice.
+Submission Date     EXI009     The first invoice rejection on the invoice must not be older than
+                               60 days from the DX Outbound Date.
+
+Attachment Validations (EXA) – Validation between exception letter and included attachments
+Message Field       Error      Description
+Attachment          Code       Attachment name(s) cannot exceed 36 characters.
+Attachment          EXA001     Only 1 attachment allowed per exception record.
+Attachment          EXA002
+Attachment          EXA003     Unable to locate corresponding attachment.
+                    EXA004     Only PDF attachments are allowed.
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    212
+
+Y.1.3 Exception File Naming Convention
+Each exception letter and response shall use the same file naming conventions. The file names are used
+to assist in identifying when an exception is submitted, simple identification in the dashboard, and to
+associate responses with submissions. Exception letters and the .zip container will both use the same
+naming convention as follows:
+SubmitterMark_ReceiverMark_InvoiceNumber_AccountDate_ExceptionLetterNumber
+ ~~Example of a correctly named zip ~~  file:
+ABCD_WXYZ_123456_2409_01.zip
+ ~~Example of exception file inside of zip file including supporting attachments:~~  
+ABCD_WXYZ_123456_2409_01 (.dat or .txt for FTP, .xlsx for CRB upload)
+Attachment_1.pdf
+Attachment_2.pdf
+Attachment_3.pdf
+The first submission of an exception to billing, either an unpaid invoice rejection (Detail Source RJ) or a
+paid invoice exception (Detail Source EE) must use exception letter number 01 in the naming convention
+and the exception file name. Each corresponding submission, on the same invoice, using the same detail
+source, must use the next numerical number from the previous submission.
+When an invoice rejection is resolved, and a subsequently issued invoice is then paid, the billed party
+may still take billing exceptions against the invoice in accordance with AAR Office Manual Rule 112.H.
+When this occurs, the submission against the paid invoice (Detail Source EE) must again start with
+exception letter 01. Each corresponding submission, on the same invoice, using the same detail source,
+must use the next numerical number from the previous submission.
+Here is an example of an invoice being rejected and then paid with exceptions:
+Note: When the detail source of the exception on the same invoice changes from RJ to EE, the file
+names will be identical.
+Initial invoice submitted to billed party:
+ •     ABCD_WXYZ_123456_2409_01 (Initial invoice rejection from billed party / Detail Source RJ)
+ •     WXYZ_ABCD_123456_2409_01 (Response from billing party to billed party)
+Invoice reissued to billed party:
+ •     ABCD_WXYZ_123456_2409_02 (Second invoice rejection on reissued invoice from billed party /
+       Detail Source RJ)
+ •     WXYZ_ABCD_123456_2409_02 (Second response from billing party to billed party)
+
+Car Repair Billing Procedures Manual                                                               213
+
+Invoice reissued by billing party and paid by billed party:
+ •     ABCD_WXYZ_123456_2409_01 (Initial exception letter from billed party to billing party)
+ •     WXYZ_ABCD_123456_2409_01 (Response from billing party to billed party)
+ •     ABCD_WXYZ_123456_2409_02 (Second exception letter from billed party to billing party)
+ •     WXYZ_ABCD_123456_2409_02 (Response to second letter from billing party to billed party)
+Excerpt from the AAR Office Manual
+The following is an excerpt from Rule 112.H.4 in the AAR Office Manual. Refer to the actual AAR Office
+Manual for the most complete and current information.
+112.H. Invoice Processing and Auditing Regulations
+e.Allexceptions must be taken at the same time. (Does not apply to exceptions covered
+       by time limit guarantee, duplicate billing, wrong repairs per Rule 111, Rule 85 material
+       billed per Rule 111, or billing in excess of the car's net settlement value.)
+ f.    Billing Repair Data where exceptions are being taken, must match the original data
+       and must be presented in the format as defined in Rule 83, Exhibit A. The correct
+       information, as shown on the original record of repair, must be furnished.
+ g. When exceptions are taken to a paid invoice, only the documentation for the repair
+       event(s) with exceptions should be submitted to the Billing Party.
+ h. Exceptions may be taken by one of the following methods. In either case, reference
+       must be made to invoice number, date of invoice, and accounting month in which
+       charges were included.
+       (1)  Each exception must be fully detailed in the format defined by Rule 112.H.4.b
+            and must be supported by the document defined in Rule 112.H.4.f.
+       (2)  Each exception must be clearly stated and associated to alleged improper line
+            item on face of the document defined in Rule 112.H.4.f.
+       (3)  Exceptions must reference the original line number as submitted by the Billing
+       Party.
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    214
+
+Y.1.4       Electronic Exception Letter Format
+                                Record Format 2 - Exceptions to Invoices
+                 Legend:  N = Numeric                R = Required
+                          A = Alphabetic             O = Optional
+                          A/N = Alphanumeric         C = Conditional
+Field for Exception       Column  Length     Format  R/O/C  Description
+Submission
+Record format             1       1          N       R      Always '2' for Exceptions
+Billing                   2       4          A/N     R      MARK/Company ID of Railroad,
+Party/Invoicing Party                                       Contractor, Car Owner, Lessor or
+                                                            Running Repair Agent
+Billed Party              6       4          A/N     R      MARK/Company ID of Railroad,
+                                                            Contractor, Car Owner, Lessor or
+Account Date              10      4          N       R      Running Repair Agent
+Total Invoice Amount      14      16         N       R      Invoice Account Date (YYMM)
+Invoice Number            30      16         A/N     R      Billing Party Invoice number (Original
+                                                            Billed Invoice Number)
+DX Outbound Date          46      6          N              DX Outbound Date will be input by
+                                                            Railinc - Date Invoice was issued
+Car Initial               52      4          A       R      (YYMMDD)
+Car Number                56      6          N       R
+Repair Date               62      6          N       R      YYMMDD
+SPLC                      68      9          N       R      Repair shop SPLC
+                                                            If Billing/Invoicing Party is a Running
+Repairing Party                                             Repair Agent (as found in Appendix H of
+                          77      4          A/N     R      AAR Office Manual or in FindUs.Rail)
+                                                            show Sponsoring Railroad reporting
+Invoice Header Level      81      1          A       R      mark.
+Exception                                                   Y = Yes, N = No
+BRC Header Level          82      1          A       R      Y = Yes, N = No
+Exception
+Line Number               83      5          N       R      Repair Line Number
+Currency Indicator        88      1          A       R      Invoice currency. U = US, C = Canada
+Submission Date           89      6          N              Submission Date will be input by Railinc -
+                                                            Date Exception/Response/CBA
+                                                            Submitted (YYMMDD)
+                                                            EE - Exception
+Detail Source             95      2          A       R      RS - Exception Reply
+                                                            RJ - Invoice Rejection
+                                                            EZ - CBA Issued
+
+
+
+Car Repair Billing Procedures Manual    215
+
+                                 Record Format 2 - Exceptions to Invoices
+                Legend:  N = Numeric                    R = Required
+                         A = Alphabetic                 O = Optional
+                         A/N = Alphanumeric             C = Conditional
+Field for Exception      Column  Length      Format     R/O/C  Description
+Submission
+Exception Letter           97           2      N         R     01 - 99
+Counter
+Description                99    348           A/N       C     Exception text
+                                                               Exception reply text
+                                                               Memo
+
+Amount                    447           16     N         R     Exception amount requested
+                                                               Exception amount allowed
+                                                               Exception Threshold Amount
+Amount Indicator          463           1      A         R     D - Debit, C - Credit
+Response Indicator        464           1      A         C     A - Agree, D - Disagree, P - Partial, blank
+Attachment                465           36     A/N       O     for initial exception
+                                                               File name of corresponding attachment
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    216
+
+Y.2     Issuing Electronic Counter Billing Authority (CBA)
+This section lists guidelines for issuing electronic CBAs to a receiving party.
+There are several reasons a CBA is issued:
+ 1.     Paid Invoice Exception Response – AAR Rule 112.D
+ 2.     MID Inspection – AAR Rule 120.B
+ 3.     AAR Circular Letter – AAR Rule 112.D
+Per Rule 112.D, “Counter Billing Authority (CBA) will be used for the purpose of monetary adjustment
+for the parties concerned.” CBAs will be issued using the CRB Electronic Exceptions System and
+processed in real time. CBAs may be issued in response to paid invoice exception letters (Rule 112.D), as
+the result of an MID Inspection (Rule 120.B), or in response to an AAR Circular Letter claim from a
+collecting party (Rule 112.D).
+All CBA messages shall be formatted in accordance with Y.2.5 as Format 3 messages. Both FTP and the
+CRB Exceptions Dashboard can be used to submit CBA messages. CBA messages in response to a paid
+exception will be included with the Type 2 messages in the response file while MID and Circular Letter
+CBA messages will be submitted as independent messages. All CBA messages submitted through an FTP
+mailbox shall be in a 500-byte format. Both .txt and .dat files are accepted. CBA Messages submitted
+through the CRB exceptions upload function on the CRB Exceptions Dashboard shall be in .xlsx format. In
+all cases, the exception message shall be in a .zip file with all applicable attachments.
+When a CBA message is issued in response to a paid invoice exception via FTP in a 500-byte format, the
+Format 3 CBA message should be the last record in the response, preceded by the Format 2 records.
+When submitted as a .xlsx upload through the exceptions dashboard, the Format 3 CBA Message will be
+submitted using the CBA CA Template tab on the “Exception Template with CBA”, available for
+download through the CRB Electronic Exceptions Dashboard.
+Each Record Format 3 message allows for 3 attachments per record, 1 in each attachment field. There is
+no limit to the number of attachments in the .zip file however no single attachment can exceed 10 MB.
+The Attachment 1 field is mandatory whereas Attachment 2 and Attachment 3 are optional. Attachment
+1 must list the file name of the CBA Letter issued and a copy of the CBA Letter must be included in the
+.zip file. Attachment 2 and 3 can be used for any additional attachments the submitter deems needed
+for the record. Only PDF documents are accepted in the electronic exceptions system. The CBA file will
+be rejected if any attachments in the .zip file are not correctly listed in the CBA message, or an
+attachment is listed in the CBA message but is not included in the .zip file. File names in the exception
+message and .zip file must match for validation.
+Y.2.1  Issuing a Paid Invoice CBA
+Exception letters submitted by a billed party to the billing party for a paid invoice, in accordance with
+AAR Office Manual Rule 112.H are submitted using the CRB Electronic Exceptions System. When a paid
+invoice exception letter is received, the billing party will respond to each exception letter with a
+Response Indicator of A (Agree), P (Partially Agree) or D (Disagree). Response Indicators A and P will be
+accompanied by a Detail Source EZ, indicating a CBA issued for that specific exception. Additionally, an
+Amount Indicator of C (Credit) or D (Debit) will accompany a Detail Source EZ to indicate if the amount
+for that exception item is a debit or credit to the receiving party.
+
+Car Repair Billing Procedures Manual                                                                 217
+
+When an exception letter response message contains at least 1 Detail Source EZ, a singular electronic
+CBA with Detail Source CA, must be included in the response. The electronic CBA is in response to that
+specific exception letter and does not preclude the billed party from submitting additional exception
+letters in the future for unresolved exceptions. The electronic CBA will be included as a Format 3 Record
+within the exception response message and should be the last record in the message. All electronic CBA
+messages must be formatted in accordance with Y.2.4.
+Y.2.2 Issuing an MID Inspection CBA
+In accordance with AAR Rule 120.B, “Whenever the AAR finds that a specific AAR Interchange Rule(s) has
+been violated, the Executive Director must direct the payment of refunds or adjustments of
+responsibility.” When this occurs, an electronic CBA will be submitted by the responsible party using
+Detail Source MI, indicating a CBA issued as a result of an MID Inspection. MID CBAs will be standalone
+CBA messages and require no request or exception from the receiving party. Additionally, MID CBA
+messages will not support responses to the CBA in the CRB Electronic Exception System.
+Y.2.3 Issuing a Circular Letter CBA
+In accordance with AAR Rule 112.D, an AAR Circular Letter may be issued that entitles an affected party
+to a collection of monies. Once the affected party has satisfied their responsibility in Rule 112.D.2, an
+electronic CBA will be submitted by the responsible party using Detail Source CL, indicating a CBA issued
+as a result of an AAR Circular Letter claim. CL CBAs will be standalone CBA messages and will not support
+responses to the CBA in the CRB Electronic Exception System.
+Y.2.4 MID and Circular Letter CBA Naming Convention
+Because a CBA with Detail Source CA is included in the exception letter response message, no specific
+naming convention is required. However, for CBAs issued with Detail Source MI or CL, a specific file
+naming convention is needed to assist in identifying when a MID or Circular Letter CBA is submitted and
+display the file correctly in the dashboard. The CBA message and the .zip container will both use the
+same naming convention as follows:
+For MID CBAs:
+SubmitterMark_ReceiverMark_MI_CBAReferenceNumber_YYMM.zip
+For CL CBAs:
+SubmitterMark_ReceiverMark_CL_CBAReferenceNumber_YYMM.zip
+ ~~Examples of correctly named CBA zip ~~  files:
+ABCD_WXYZ_MI_CBA123456789098_2505.zip
+ABCD_WXYZ_CL_CBA987654321234_2505.zip
+
+
+
+
+
+Car Repair Billing Procedures Manual    218
+
+ ~~Example of CBA file inside of zip file including supporting attachments:~~  
+ABCD_WXYZ_MI_ CBA123456789098_2505.zip (.dat or .txt for FTP, .xlsx for CRB upload)
+Attachment_1.pdf
+Attachment_2.pdf
+Attachment_3.pdf
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    219
+
+Y.2.5 Electronic Record Format 3 CBA Message, Required Fields and Validations
+
+
+                         Legend:      N =   Record Format 3—CBA Record
+                                      A = Numeric              R = Required
+                                      A/NAlphabetic            O = Optional
+                                            = Alphanumeric     C = Conditionally Required
+Field Name                          Column  Length         Format    R/O/C                   Notes
+Record Format                          1      1              N         R     Always "3"
+Billing/Issuing Party                  2      4             A/N        R     This could be a Railroad, Contractor, Car
+Billed/Receiving Party                 6      4             A/N        R     Owner, Lessor or Running Repair Agent
+Exception Letter Date                10       6              N         C     YYMM / Submission Date of the
+Invoice Number                       16               16    A/N        C     exception letter
+Account Date                         32       4              N         C     Invoice number the CBA is being issued to
+CBA/Document Reference               36               15    A/N        R     YYMM
+Number
+CBA Issue Date                       51       6              N         R     YYMMDD
+Detail Source                        57       2              A         R     CA - CBA Information for Paid Invoice
+                                                                             Exception Letter Response
+                                                                             MI - MID Inspection CBA
+CBA Total Amount                     59               16     N         R     CL - Circular Letter CBA
+Currency Indicator                   75              1       A         R     Example: 16426872 = $164,268.72
+MID File Number                      76               36    A/N        C     U = US, C = Canada
+Circular Letter Number              112               36    A/N        C     Only for Detail Source MI
+Issuing Representative              148     200              A         R     Only for detail Source CL
+Attachment 1                        348               36    A/N        R     A PDF Copy of the CBA Letter
+Attachment 2                        384               36    A/N        O
+Attachment 3                        420               36    A/N        O
+Future Use                          456               45    A/N        O     Spaces
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    220
+
+Record Format 3 CBA Record Required Fields
+                             Required Fields for CBA Messages
+                             M=Mandatory, B=Blank, O=Optional
+Billing Party CBA Fields     CA - CBA Issued for         MI - CBA Issued for MID     CL - CBA Issued
+                             paid exception              inspection                  based on a circular
+                             response                                                letter
+
+Record Format                M (Always 3)                M (Always 3)                M (Always 3)
+Billing/Issuing Party        M                           M                           M
+Billed/Receiving Party       M                           M                           M
+Exception Letter Date        M                           B                           B
+Invoice Number               M                           B                           B
+Account Date                 M                           B                           B
+CBA/Document                 M                           M                           M
+Reference Number
+CBA Issue Date               M                           M                           M
+Detail Source                M (Must be CA)              M (Must be MI)              M (Must be CL)
+CBA Total Amount             M (Total amount of EZ       M (Total amount of CBA      M (Total amount of
+Currency Indicator           in the response)            issued)                     CBA issued)
+                             M                           M                           M
+MID File Number              B                           M                           B
+Circular Letter Number       B                           B                           M
+Issuing Representative       M                           M                           M
+Attachment 1                 M (Must contain .pdf of     M (Must contain .pdf of     M (Must contain
+Attachment 2                 CBA)                        CBA)                        .pdf of CBA)
+                             O (Other supporting         O (Other supporting         O (Other supporting
+Attachment 3                 documentation)              documentation)              documentation)
+                             O (Other supporting         O (Other supporting         O (Other supporting
+Future Use                   documentation)              documentation)              documentation)
+                             B                           B                           B
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    221
+
+Message Validations (EX3) – Validations of the Record Format 3 CBA message data
+Message Field              Error      Description
+Record Format              Code
+                           EX3001     Check that record format 3 is submitted when detail source EZ is
+Record Format              EX3002     in the response
+                                      Check that only 1 record format 3 is submitted when detail
+Record Format              EX3003     source EZ is in the response
+                                      Check that record format is 3
+Billing/Issuing Party      EX3004     Check for proper data entry
+Billed/Receiving Party     EX3005     Check for proper data entry
+Exception Letter Date      EX3006     Check for proper data entry
+Invoice Number             EX3007     Check the format is correct
+Account Date               EX3008     Check the format is correct
+CBA Issue Date             EX3009     Check for proper data entry
+Detail Source              EX3010     Check for proper data entry
+Detail Source              EX3011     Check to ensure no MI or CL in a response message
+CBA Total Amount           EX3012     Check for proper data entry
+MID File Number            EX3013     Check for proper data when MID CBA
+Circular Letter Number     EX3014     Check for proper data when Circular Letter CBA
+Issuing Representative     EX3015     Check for proper data entry
+Currency Indicator         EX3016     Check for proper data entry
+CBA/Document Reference     EX3017     Check for data entry value
+Number
+CBA/Document Reference     EX3018     Check for proper data entry
+Number
+MID File Number            EX3019     Check for expected blank fields
+Circular Letter Number     EX3020     Check for expected blank fields
+Exception Letter Date      EX3021     Check for expected blank fields
+Invoice Number             EX3022     Check for expected blank fields
+Account Date               EX3023     Check for expected blank fields
+Circular Letter Number     EX3024     Check for expected blank fields
+Exception Letter Date      EX3025     Check for expected blank fields
+Invoice Number             EX3026     Check for expected blank fields
+Account Date               EX3027     Check for expected blank fields
+MID File Number            EX3028     Check for expected blank fields
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    222
+
+Invoice Validations (EXI) – Validations between Record Format 3 (CBA) and Record Format 2
+(exception letter response)
+Message Field                Error      Description
+Billing/Issuing Party        Code
+                             EXI010     Check that Billing Party matches exception response
+Billed/Receiving Party       EXI011     Check that Billed Party matches exception response
+Invoice Number               EXI012     Check invoice number matches exception response
+Account Date                 EXI013     Check account date matches response
+CBA Total Amount             EXI014     Check total amount is equal to the sum of EZ in the response
+Attachment Validations (EXA) – Validation between exception letter and included attachments
+Message Field                Error      Description
+Attachment 1                 Code
+                             EXA005     Check to ensure attachment is listed
+Attachment 1                 EXA006     Check for only 1 attachment
+Attachment 1                 EXA007     Check for correct attachment format
+Attachment 1                 EXA008     Check for attachment in zip container
+Attachment 2                 EXA010     Check for only 1 attachment
+Attachment 2                 EXA011     Check for correct attachment format
+Attachment 2                 EXA012     Check for attachment in zip container
+Attachment 3                 EXA014     Check for only 1 attachment
+Attachment 3                 EXA015     Check for correct attachment format
+Attachment 3                 EXA016     Check for attachment in zip container
+All Included Attachments in  EXA017     Check attachments in .zip for file type pdf
+.zip
+All Attachment Fields in     EXA018     Check attachment fields in message for match with container
+message                                 attachments
+
+
+
+
+
+
+
+
+
+
+Car Repair Billing Procedures Manual    223
+
+                                                      (Last Updated: 1/1/2020)
+Appendix Z           Sample Documents
+This appendix contains sample documents.
+Z.1  Invoice Template
+The following is a sample invoice that can be used as a template for sending monthly AAR Car Repair
+invoices from the Billing Party to the Billed Party.
+COMPANY LOGO
+             INVOICING PARTY
+ ACCOUNTS RECEIVABLE FOR AAR CAR REPAIRS
+<INVOICE NUMBER>
+<INVOICING/BILLING PARTY>
+
+(BILLED PARTY INITIAL)                                INVOICE NO.: <INVOICE NUMBER>
+BILLED PARTY COMPANY NAME                             ACCOUNT DT: YY/MM
+ADDRESS 1                                             INVOICE DT: YYYY/MM/DD
+ADDRESS 2
+CITY, STATE, ZIP CODE, COUNTRY
+
+REPAIRS TO CARS IN ACCORDANCE WITH AAR RULES
+                              CHARGES
+ Defect Card (DC)                       $50,030.13
+ Billing Repair Card (BR)     $1,209,749.15
+ <Add'l CRB Categories>                             $0
+ TOTAL INVOICE AMOUNT         $1,259,779.28
+
+
+
+
+
+PLEASE REMIT TO THE FOLLOWING ADDRESS     DIRECT INQUIRIES TO:
+WITH REFERENCE TO ABOVE BILL:             TITLE
+INVOICING PARTY COMPANY                   INVOICING PARTY COMPANY
+<IP REMIT TO ADDRESS INFO>                <IP INQUIRIES INFO>
+
+
+DIRECT EXCEPTIONS TO:
+TITLE
+INVOICING PARTY COMPANY
+<IP EXCEPTION HANDLING INFO>
+
+
+Car Repair Billing Procedures Manual    224
